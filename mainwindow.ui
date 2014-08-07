@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>640</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,13 +19,19 @@
      <rect>
       <x>-1</x>
       <y>-1</y>
-      <width>401</width>
-      <height>271</height>
+      <width>641</width>
+      <height>451</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="2">
       <widget class="QFrame" name="controlFrame">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
@@ -35,10 +41,10 @@
        <widget class="QWidget" name="gridLayoutWidget_2">
         <property name="geometry">
          <rect>
-          <x>70</x>
+          <x>0</x>
           <y>0</y>
-          <width>131</width>
-          <height>261</height>
+          <width>201</width>
+          <height>451</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
@@ -66,8 +72,8 @@
          <rect>
           <x>-1</x>
           <y>-1</y>
-          <width>191</width>
-          <height>261</height>
+          <width>431</width>
+          <height>441</height>
          </rect>
         </property>
        </widget>
