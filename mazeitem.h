@@ -21,17 +21,19 @@ public:
     QRectF boundingRect() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 public:
-    Cell &at(unsigned int x, unsigned int y);
+    Cell &at(unsigned int x, unsigned int y); // 左上原点
+    Cell &on(unsigned int x, unsigned int y); // 左下原点
 private:
     qreal cellPixel();
 private:
     bool _isHalf;
     unsigned int _width;
     unsigned int _height;
-    Cell * _start;
+    QPoint _start;
     std::list<Wall> _walls;
     std::vector<Cell> _cells;
-    std::list<Cell *> _goals;
+    std::list<QPoint> _goals;
+    bool isOK = false;
 };
 
 struct MazeItem::Wall {

@@ -25,6 +25,7 @@ void MainWindow::on_fileOpenButton_clicked()
                                                         "Maze file(*.dat)",
                                                         //";;Map text(*.txt)",
                                                         &selectedFilter);
+    delete item;
     item = new MazeItem(openFilePath);
     scene->addItem(item);
 }
