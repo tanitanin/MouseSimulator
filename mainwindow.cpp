@@ -15,5 +15,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_fileOpenButton_clicked()
 {
-    QString openedFileName = QFileDialog::getOpenFileName(this,tr("Open maze"),".",".dat");
+    QString selectedFilter;
+    QString openFilePath = QFileDialog::getOpenFileName(this,tr("Open maze file..."),
+                                                        QString(),
+                                                        "Maze file(*.dat)",
+                                                        //";;Map text(*.txt)",
+                                                        &selectedFilter);
 }
