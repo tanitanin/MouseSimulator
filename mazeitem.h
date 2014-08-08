@@ -1,41 +1,57 @@
-#pragma once
 #ifndef MAZEITEM_H
 #define MAZEITEM_H
 
 #include <list>
+#include <vector>
 
+#include <QPainter>
 #include <QGraphicsItem>
+#include <QFile>
 #include <QTextStream>
 
 class MazeItem : public QGraphicsItem
 {
-    Q_OBJECT
 public:
     struct Wall;
     struct Cell;
 public:
-    MazeItem();
-    MazeItem(QString &filepath);
+    MazeItem(QGraphicsItem *parent = 0);
+    MazeItem(QString &filepath, QGraphicsItem *parent = 0);
 public:
-    virtual QRectF boundingRect() const;
-    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    QRectF boundingRect() const;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+public:
+    Cell &at(unsigned int x, unsigned int y);
+private:
+    qreal cellPixel();
 private:
     bool _isHalf;
     unsigned int _width;
     unsigned int _height;
     Cell * _start;
     std::list<Wall> _walls;
-    std::list<Cell> _cells;
+    std::vector<Cell> _cells;
     std::list<Cell *> _goals;
 };
 
 struct MazeItem::Wall {
     bool isVisible = false;
+    bool isHorizontal = false;
+    bool isVertical = false;
+    unsigned int x = 0;
+    unsigned int y = 0;
 };
 
 struct MazeItem::Cell {
     unsigned int x = 0;
     unsigned int y = 0;
+    char wdata;
+    bool isGoal = false;
+    bool isStart = false;
+    Cell *upper = nullptr;
+    Cell *lower = nullptr;
+    Cell *right = nullptr;
+    Cell *left = nullptr;
     Wall *north = nullptr;
     Wall *east = nullptr;
     Wall *west = nullptr;

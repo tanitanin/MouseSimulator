@@ -14,7 +14,7 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-        mazeitem.cc
+        mazeitem.cpp
 
 HEADERS  += mainwindow.h \
             mazeitem.h
