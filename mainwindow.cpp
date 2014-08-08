@@ -6,6 +6,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    scene = new QGraphicsScene(this);
+    item = new MazeItem();
+    scene->addItem(item);
+    ui->graphicsView->setScene(scene);
 }
 
 MainWindow::~MainWindow()
@@ -21,4 +25,6 @@ void MainWindow::on_fileOpenButton_clicked()
                                                         "Maze file(*.dat)",
                                                         //";;Map text(*.txt)",
                                                         &selectedFilter);
+    item = new MazeItem(openFilePath);
+    scene->addItem(item);
 }

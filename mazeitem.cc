@@ -6,7 +6,7 @@ MazeItem::MazeItem()
 
 }
 
-MazeItem::MazeItem(const QString &filepath)
+MazeItem::MazeItem(QString &filepath)
     : _isHalf(false), _width(), _height(), _walls(), _cells()
 {
     QTextStream stream(filepath);

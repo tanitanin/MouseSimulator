@@ -15,7 +15,7 @@ public:
     struct Cell;
 public:
     MazeItem();
-    MazeItem(const QString &filepath);
+    MazeItem(QString &filepath);
 public:
     virtual QRectF boundingRect() const;
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
