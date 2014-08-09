@@ -8,13 +8,18 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     scene = new QGraphicsScene(this);
     item = new MazeItem();
+    mouse = new MouseItem();
     scene->addItem(item);
+    scene->addItem(mouse);
     ui->graphicsView->setScene(scene);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    //delete item;
+    //delete mouse;
+    delete scene;
 }
 
 void MainWindow::on_fileOpenButton_clicked()
@@ -25,7 +30,12 @@ void MainWindow::on_fileOpenButton_clicked()
                                                         "Maze file(*.dat)",
                                                         //";;Map text(*.txt)",
                                                         &selectedFilter);
-    delete item;
+    if(item && item->scene()==scene) scene->removeItem(item);
+    if(mouse && mouse->scene()==scene) scene->removeItem(mouse);
+    if(item) delete item;
+    if(mouse) delete mouse;
     item = new MazeItem(openFilePath);
+    mouse = new MouseItem(openFilePath);
     scene->addItem(item);
+    scene->addItem(mouse);
 }
