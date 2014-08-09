@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QFileDialog>
 
+#include "mazeitem.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -21,6 +23,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    MazeItem *item;
+    QGraphicsScene *scene;
 };
 
 #endif // MAINWINDOW_H
