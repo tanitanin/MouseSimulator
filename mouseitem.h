@@ -22,7 +22,7 @@ private:
 
 private:
     QPointF _current;
-    qreal _angle = 45.0;
+    qreal _angle = 90.0;
     unsigned int _width = 0;
     unsigned int _height = 0;
     bool _isHalf = false;

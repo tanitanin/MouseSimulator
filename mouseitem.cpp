@@ -43,27 +43,22 @@ void MouseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         const qreal toffset = cellPixel()/2.0;
         const QPointF offset(roffset,toffset);
 
-        painter->translate(offset);
         painter->scale(boundingRect().width()/(_width+1)/cellPixel(),
                        boundingRect().width()/(_width+1)/cellPixel());
         // 機体
-        QPointF pf = toDisplayCood(_current);
+        QPointF pf = toDisplayCood(_current) + offset;
         const qreal co = cos(_angle/180.0*3.1415926);
         const qreal si = sin(_angle/180.0*3.1415926);
-        const qreal top = 8.0;
+        const qreal top = 7.0;
         //const qreal tail = 10.0;
-        const qreal side = 5.0;
-        painter->setPen(QColor(100,100,100));
+        const qreal side = 90.0;
         QPainterPath path(pf+QPointF(top*co,-top*si));
-        path.lineTo(pf+QPointF(side*co+side*si,side*co-side*si));
-        path.lineTo(pf+QPointF((-side)*co+side*si,(-side)*co-side*si));
-        path.lineTo(pf+QPointF((-side)*co-side*si,(-side)*co+side*si));
-        path.lineTo(pf+QPointF(side*co-side*si,side*co+side*si));
+        path.lineTo(pf+QPointF(side*co+side*si,-side*si+side*co));
+        path.lineTo(pf+QPointF(-side*co+side*si,side*si+side*co));
+        path.lineTo(pf+QPointF(-side*co-side*si,side*si-side*co));
+        path.lineTo(pf+QPointF(side*co-side*si,-side*si-side*co));
         path.lineTo(pf+QPointF(top*co,-top*si));
         painter->fillPath(path,QBrush(QColor(100,100,100)));
-        painter->fillRect(QRectF(pf+QPointF(top*co-side,-top*si),
-                                 QSizeF(side*2,side*2)),
-                          QColor(150,150,150));
         qDebug("ok");
     }
 }
