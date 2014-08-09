@@ -5,6 +5,7 @@
 #include <QFileDialog>
 
 #include "mazeitem.h"
+#include "mouseitem.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +25,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     MazeItem *item;
+    MouseItem *mouse;
     QGraphicsScene *scene;
 };
 

@@ -8,7 +8,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     scene = new QGraphicsScene(this);
     item = new MazeItem();
+    mouse = new MouseItem();
     scene->addItem(item);
+    scene->addItem(mouse);
     ui->graphicsView->setScene(scene);
 }
 

@@ -3,16 +3,14 @@
 
 #include <QGraphicsItem>
 
-class mouseitem : public QGraphicsItem
+class MouseItem : public QGraphicsItem
 {
-    Q_OBJECT
 public:
-    explicit mouseitem(QObject *parent = 0);
+    explicit MouseItem(QGraphicsItem *parent = 0);
 
-signals:
-
-public slots:
-
+public:
+    virtual QRectF boundingRect() const;
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 };
 
 #endif // MOUSEITEM_H
