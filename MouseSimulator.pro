@@ -15,10 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
         mazeitem.cpp \
-    mouseitem.cpp
+    mouseitem.cpp \
+    mouseaibase.cpp
 
 HEADERS  += mainwindow.h \
             mazeitem.h \
-    mouseitem.h
+    mouseitem.h \
+    mouseaibase.h
 
 FORMS    += mainwindow.ui
