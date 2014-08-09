@@ -51,7 +51,7 @@ void MouseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         const qreal si = sin(_angle/180.0*3.1415926);
         const qreal top = 7.0;
         //const qreal tail = 10.0;
-        const qreal side = 90.0;
+        const qreal side = 4.0;
         QPainterPath path(pf+QPointF(top*co,-top*si));
         path.lineTo(pf+QPointF(side*co+side*si,-side*si+side*co));
         path.lineTo(pf+QPointF(-side*co+side*si,side*si+side*co));
