@@ -26,86 +26,88 @@
      <height>445</height>
     </size>
    </property>
-   <widget class="QWidget" name="gridLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>9</x>
-      <y>9</y>
-      <width>621</width>
-      <height>431</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <property name="sizeConstraint">
-      <enum>QLayout::SetDefaultConstraint</enum>
-     </property>
-     <property name="spacing">
-      <number>6</number>
-     </property>
-     <item row="0" column="1">
-      <widget class="QFrame" name="controlFrame">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>200</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QWidget" name="gridLayoutWidget_2">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>201</width>
-          <height>431</height>
-         </rect>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <item>
+       <widget class="QGraphicsView" name="graphicsView"/>
+      </item>
+      <item>
+       <widget class="QFrame" name="controlFrame">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <layout class="QGridLayout" name="gridLayout_2">
-         <item row="3" column="0">
-          <widget class="QPushButton" name="cancelButton">
-           <property name="enabled">
-            <bool>false</bool>
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QFrame" name="informationFrame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
            </property>
-           <property name="text">
-            <string>Cancel</string>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
            </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="1" column="0">
+             <widget class="QLabel" name="widthLabel">
+              <property name="text">
+               <string>Width</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="widthLineEdit"/>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLabel" name="heightLabel">
+              <property name="text">
+               <string>Height</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QLineEdit" name="heightLineEdit"/>
+            </item>
+           </layout>
           </widget>
          </item>
-         <item row="0" column="0">
+         <item>
+          <widget class="QGraphicsView" name="subGraphicsView"/>
+         </item>
+         <item>
           <widget class="QPushButton" name="fileOpenButton">
            <property name="text">
             <string>Open</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="0">
-          <widget class="QPushButton" name="startButton">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>Start</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
+         <item>
           <spacer name="verticalSpacer">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -118,15 +120,32 @@
            </property>
           </spacer>
          </item>
+         <item>
+          <widget class="QPushButton" name="startButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Start</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="cancelButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Cancel</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QGraphicsView" name="graphicsView"/>
-     </item>
-    </layout>
-   </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
