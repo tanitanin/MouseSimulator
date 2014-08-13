@@ -38,4 +38,5 @@ void MainWindow::on_fileOpenButton_clicked()
     mouse = new MouseItem(openFilePath);
     scene->addItem(item);
     scene->addItem(mouse);
+    ui->startButton->setEnabled(true);
 }
