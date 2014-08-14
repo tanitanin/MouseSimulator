@@ -40,7 +40,7 @@ void MouseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 {
     if(isOK) {
         const qreal roffset = cellPixel()/2.0;
-        const qreal toffset = cellPixel()/2.0;
+        const qreal toffset = 0;// cellPixel()/2.0;
         const QPointF offset(roffset,toffset);
 
         painter->scale(boundingRect().width()/(_width+1)/cellPixel(),

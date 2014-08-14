@@ -23,6 +23,8 @@ public:
 public:
     Cell &at(unsigned int x, unsigned int y); // 左上原点
     Cell &on(unsigned int x, unsigned int y); // 左下原点
+    const unsigned int width() const;
+    const unsigned int height() const;
 private:
     qreal cellPixel();
 private:

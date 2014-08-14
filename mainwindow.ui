@@ -82,7 +82,14 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="widthLineEdit"/>
+             <widget class="QLineEdit" name="widthLineEdit">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
             </item>
             <item row="1" column="2">
              <widget class="QLabel" name="heightLabel">
@@ -92,7 +99,11 @@
              </widget>
             </item>
             <item row="1" column="3">
-             <widget class="QLineEdit" name="heightLineEdit"/>
+             <widget class="QLineEdit" name="heightLineEdit">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>

@@ -134,13 +134,21 @@ MazeItem::Cell &MazeItem::on(unsigned int x, unsigned int y) {
     return _cells[x+(_height-1-y)*_width];
 }
 
+const unsigned int MazeItem::width() const {
+    return _width;
+}
+const unsigned int MazeItem::height() const {
+    return _height;
+}
+
 qreal MazeItem::cellPixel() {
     return 18.0 * (_isHalf ? 0.5 : 1.0);
 }
 
 QRectF MazeItem::boundingRect() const
 {
-    return QRectF(0,0,413,429);
+
+    return QRectF(0,0,400,400);
 }
 
 void MazeItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

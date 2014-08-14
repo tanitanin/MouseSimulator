@@ -25,8 +25,10 @@ private slots:
 private:
     Ui::MainWindow *ui;
     MazeItem *item;
+    MazeItem *mazeitem;
     MouseItem *mouse;
-    QGraphicsScene *scene;
+    QGraphicsScene *mousescene;
+    QGraphicsScene *mazescene;
 };
 
 #endif // MAINWINDOW_H
