@@ -38,14 +38,14 @@ QPointF MouseItem::toDisplayCood(QPointF &point) {
 
 QRectF MouseItem::boundingRect() const
 {
-    return QRectF(0,0,413,429);
+    return QRectF(0,0,400,400);
 }
 
 void MouseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     if(isOK) {
         const qreal roffset = cellPixel()/2.0;
-        const qreal toffset = 0;// cellPixel()/2.0;
+        const qreal toffset = cellPixel()/2.0;
         const QPointF offset(roffset,toffset);
 
         painter->scale(boundingRect().width()/(_width+1)/cellPixel(),
