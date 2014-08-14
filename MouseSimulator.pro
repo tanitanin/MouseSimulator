@@ -16,11 +16,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
         mazeitem.cpp \
     mouseitem.cpp \
-    mouseaibase.cpp
+    mouseaibase.cpp \
+    exhidaritedijkstra.cpp
 
 HEADERS  += mainwindow.h \
             mazeitem.h \
     mouseitem.h \
-    mouseaibase.h
+    mouseaibase.h \
+    exhidaritedijkstra.h
 
 FORMS    += mainwindow.ui

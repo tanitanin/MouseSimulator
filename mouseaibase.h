@@ -27,8 +27,11 @@ private:
     const bool _isHalf;
     const int _halfGoalX;
     const int _halfGoalY;
-    double _currentX;
-    double _currentY;
+    int _currentX; // マス位置
+    int _currentY; // マス位置
+    double _currentXaxis; // 連続座標
+    double _currentYaxis; // 連続座標
+    double _currentAngle; // 度
     union {
         char _wallCharUnion;
         struct {
@@ -37,6 +40,7 @@ private:
             bool _currentWallLeft : 1;
         };
     };
+    bool isOK = false;
 };
 
 #endif // MOUSEAIBASE_H
