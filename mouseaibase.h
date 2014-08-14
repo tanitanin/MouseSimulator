@@ -1,21 +1,26 @@
 #ifndef MOUSEAIBASE_H
 #define MOUSEAIBASE_H
 
-class MouseAIBase
+#include <QGraphicsItem>
+
+class MouseAIBase : QGraphicsItem
 {
 public:
 
 public:
-    explicit MouseAIBase(int width, int height, bool isHalf, int goalPosX=0, int goalPosY=0);
+    explicit MouseAIBase(int width, int height, bool isHalf, int goalPosX=0, int goalPosY=0, QGraphicsItem *parent=0);
     ~MouseAIBase();
 private:
-    MouseAIBase();
+    explicit MouseAIBase(QGraphicsItem *parent=0);
 public:
     void setCurrentPos(double x, double y);
 public:
     virtual void initialize() = 0;
     virtual void setCurrentWall(bool forward, bool right, bool left) = 0;
     virtual void nextStep(double &nextX, double &nextY, double &nextAngle) = 0;
+public:
+    QRectF boundingRect() const;
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) = 0;
 private:
     const int _mazeWidth;
     const int _mazeHeight;
