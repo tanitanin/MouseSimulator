@@ -20,7 +20,12 @@ MouseItem::MouseItem(QString &filepath, QGraphicsItem *parent) :
     file.close();
     _current = QPointF(cellPixel()/2,cellPixel()/2);
     _angle = 90.0;
-    isOK = true;
+    mouseai = nullptr;//new MouseAIBase(_width,_height,_isHalf,half_gx,half_gy,this);
+    isOK = false;
+}
+
+MouseItem::~MouseItem() {
+    //delete mouseai;
 }
 
 qreal MouseItem::cellPixel() {
@@ -60,5 +65,15 @@ void MouseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         path.lineTo(pf+QPointF(top*co,-top*si));
         painter->fillPath(path,QBrush(QColor(100,100,100)));
         qDebug("ok");
+    }
+}
+
+void MouseItem::setAIMode(AIMode mode) {
+    if(mouseai) delete mouseai;
+    switch(mode) {
+    Adachi_HosuuMap: mouseai = nullptr; break;
+    ExHidarite_Dijkstra: break;
+    Astar: break;
+    default: mouseai = nullptr; break;
     }
 }

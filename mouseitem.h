@@ -6,11 +6,22 @@
 #include <QTextStream>
 #include <QPainter>
 
+#include "mouseaibase.h"
+
 class MouseItem : public QGraphicsItem
 {
 public:
     explicit MouseItem(QGraphicsItem *parent = 0);
     MouseItem(QString &filepath,QGraphicsItem *parent = 0);
+    ~MouseItem();
+
+public:
+    enum AIMode {
+        Adachi_HosuuMap,
+        ExHidarite_Dijkstra,
+        Astar,
+    };
+    void setAIMode(AIMode mode);
 
 public:
     virtual QRectF boundingRect() const;
@@ -27,6 +38,7 @@ private:
     unsigned int _height = 0;
     bool _isHalf = false;
     bool isOK = false;
+    MouseAIBase *mouseai;
 };
 
 #endif // MOUSEITEM_H
